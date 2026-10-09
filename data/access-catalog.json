@@ -1,0 +1,18 @@
+{
+  "entitlements": {
+    "email.user": {"application": "Email", "description": "Use corporate email", "owner": "E901", "requestable": false},
+    "erp.invoice.read": {"application": "ERP", "description": "Read invoices", "owner": "E900", "requestable": true},
+    "erp.payment.create": {"application": "ERP", "description": "Create payment transactions", "owner": "E900", "requestable": true},
+    "erp.payment.approve": {"application": "ERP", "description": "Approve payment transactions", "owner": "E900", "requestable": true},
+    "helpdesk.agent": {"application": "Helpdesk", "description": "Work helpdesk tickets", "owner": "E901", "requestable": true},
+    "crm.user": {"application": "CRM", "description": "Access sales records", "owner": "E902", "requestable": true}
+  },
+  "department_roles": {
+    "Finance": ["email.user", "erp.invoice.read"],
+    "IT": ["email.user", "helpdesk.agent"],
+    "Sales": ["email.user", "crm.user"],
+    "Executive": ["email.user"]
+  },
+  "sod_rules": [{"id": "SOD-001", "description": "The same person cannot create and approve payments", "incompatible_entitlements": ["erp.payment.create", "erp.payment.approve"]}],
+  "approval_policy": "Manager and application owner must approve. A requester cannot approve their own access. If an approver is the requester, route to the executive sponsor. Distinct approval stages remain required even when both reviewers are the same person."
+}

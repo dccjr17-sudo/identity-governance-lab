@@ -1,0 +1,8 @@
+employee_id,display_name,department,job_title,manager_id,worker_type,status
+E100,Alex Employee,Finance,Accounts Payable Analyst,E900,Employee,active
+E101,Jamie Analyst,IT,IT Analyst,E901,Employee,active
+E102,Taylor Contractor,Sales,Sales Contractor,E902,Contractor,active
+E900,Morgan Finance,Finance,Finance Manager,E999,Employee,active
+E901,Riley IT,IT,IT Manager,E999,Employee,active
+E902,Casey Sales,Sales,Sales Manager,E999,Employee,active
+E999,Jordan Executive,Executive,Executive Sponsor,,Employee,active
